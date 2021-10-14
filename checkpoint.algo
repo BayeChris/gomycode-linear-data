@@ -1,0 +1,72 @@
+
+/* Problème 1 */
+
+ALGORITHM sum_of_overlapping_elements
+VAR
+    sum = 0;
+    T1 = array1 of INTEGER [];
+    T2 = array2 of INTEGER [];
+    T3 = array3 of INTEGER [];
+BEGIN
+    N := T1.length-1 
+    M := T2.length-1
+
+    write("Entrez un tableau avec vos informations")
+    read(T1 et T2)
+
+    FOR (i from n-1 to 0) DO
+        FOR (j from m-1 to 0) DO
+            IF (T1[i]<>T2[j]) THEN
+                sum := sum + T1[i] + T2[j]
+            END_IF    
+        END_FOR        
+    END_FOR
+
+        FOR i from n-1 to 0 DO
+        FOR j from m-1 to 0 DO
+            IF (T1[i] = T2[j]) THEN
+                T3 := T3.push(T1[i],T2[j])
+            END_IF    
+        END_FOR        
+    END_FOR
+    write (sum)
+
+END
+
+/* Second Exercice */
+/* problème 2 */
+
+ALGORITHM sum_of_overlapping_elements
+VAR
+    sum = 0;
+    htab1 = HASH_TABLE<INTEGER,INTEGER>
+    htab2 = HASH_TABLE<INTEGER,INTEGER>
+    htab3 = HASH_TABLE<INTEGER,INTEGER>
+
+    Tab1 = array1 of INTEGER [];
+    Tab2 = array2 of INTEGER [];
+    Tab3 = array3 of INTEGER [];
+BEGIN
+    N := Tab1.length-1 
+    M := Tab2.length-1
+
+    write("Entrez un tableau avec vos informations")
+    read(tab1 et tab2)
+
+        FOR i from n-1 to 0 DO
+        FOR j from m-1 to 0 DO
+            IF (htab1.get(tab1[i]) <> htab2.get(tab2[j])) THEN
+                sum := sum + Tab1.get(i), Tab2.get(j)
+            END_IF    
+        END_FOR        
+    END_FOR
+
+        FOR i from n-1 to 0 DO
+        FOR j from m-1 to 0 DO
+            IF (htab1.get(tab1[i]) = htab2.get(tab2[j])) THEN
+                Tab3 := Tab3.push(Tab1.get(i),Tab2.get(j))
+            END_IF    
+        END_FOR        
+    END_FOR
+    write (sum)
+END
