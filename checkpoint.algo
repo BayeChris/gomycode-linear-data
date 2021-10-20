@@ -53,7 +53,7 @@ BEGIN
     write("Entrez un tableau avec vos informations")
     read(tab1 et tab2)
 
-        FOR i from 0 to n-1  DO
+        FOR i from 0 to n-1 DO
         FOR j from 0 to m-1 DO
             IF (htab1.get(tab1[i]) <> htab2.get(tab2[j])) THEN
                 sum := sum + Tab1.get(i), Tab2.get(j)
